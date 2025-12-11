@@ -1,11 +1,132 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>eyvoyage</title>
-  </head>
-  <body>
-    <h1>Hello, world!</h1>
-    <p>Your travel site is live 🚀</p>
-  </body>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            color: #333;
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            height: 100vh;
+            background-image: url('hero.jpg'); /* ←ここにあなたの写真 */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-shadow: 0 4px 12px rgba(0,0,0,0.7);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            letter-spacing: 2px;
+            font-weight: 300;
+        }
+
+        /* --- CARD SECTION --- */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .card {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
+            background: white;
+            transition: transform 0.25s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+        }
+
+        .card-title {
+            padding: 16px;
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        /* --- MAP SECTION --- */
+        .map-section {
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        #map {
+            height: 400px;
+            width: 100%;
+            max-width: 1200px;
+            margin: 20px auto;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+    </style>
+
+    <!-- Leaflet 地図ライブラリ -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+</head>
+<body>
+
+    <!-- HERO SECTION -->
+    <div class="hero">
+        <h1>eyvoyage</h1>
+    </div>
+
+    <!-- CARD SECTION -->
+    <div class="cards">
+        <div class="card">
+            <img src="sample1.jpg" />
+            <div class="card-title">Japan</div>
+        </div>
+        <div class="card">
+            <img src="sample2.jpg" />
+            <div class="card-title">Peru</div>
+        </div>
+        <div class="card">
+            <img src="sample3.jpg" />
+            <div class="card-title">Mexico</div>
+        </div>
+    </div>
+
+    <!-- MAP SECTION -->
+    <div class="map-section">
+        <h2>Travel Map</h2>
+        <div id="map"></div>
+    </div>
+
+    <script>
+        var map = L.map('map').setView([20, 0], 2);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; OSM contributors'
+        }).addTo(map);
+
+        // ピンの例
+        L.marker([35.6762, 139.6503]).addTo(map).bindPopup('Tokyo');
+        L.marker([-13.1631, -72.5450]).addTo(map).bindPopup('Machu Picchu');
+    </script>
+
+</body>
 </html>
