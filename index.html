@@ -17,13 +17,21 @@
         /* --- HERO SECTION --- */
         .hero {
   height: 100vh;
+  background-image: url('hero.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  padding-top: 35vh; /* */
+  padding-top: 35vh;   /* ← ここで上下を調整（30〜40vhで微調整） */
+
+  color: #fff;
+  text-shadow: 0 4px 12px rgba(0,0,0,0.7);
 }
 
-.hero-inner {
+.hero-text {
   text-align: center;
 }
 
