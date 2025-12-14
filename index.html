@@ -16,23 +16,38 @@
 
         /* --- HERO SECTION --- */
         .hero {
-            height: 100vh;
-            background-image: url('hero.jpg'); /* ←ここにあなたの写真 */
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-shadow: 0 4px 12px rgba(0,0,0,0.7);
-        }
+  height: 100vh;
+  background-image: url('hero.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 
-        .hero h1 {
-            font-size: 3rem;
-            letter-spacing: 2px;
-            font-weight: 300;
-        }
+  display: flex;
+  align-items: flex-end;   /* 下寄せ */
+  justify-content: center; /* 中央寄せ */
+
+  padding: 0 20px 64px;    /* 下に余白 */
+  color: white;
+  text-shadow: 0 4px 12px rgba(0,0,0,0.7);
+}
+
+.hero-inner {
+  text-align: center;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: 3rem;
+  letter-spacing: 2px;
+  font-weight: 300;
+}
+
+.tagline {
+  margin: 10px 0 0;
+  font-size: 0.95rem;
+  letter-spacing: 0.10em;
+  opacity: 0.9;
+}
 
         /* --- CARD SECTION --- */
         .cards {
@@ -93,9 +108,11 @@
 
     <!-- HERO SECTION -->
     <div class="hero">
-        <h1>eyvoyage</h1>
-        <p>Travel notes and planning</p>
-    </div>
+  <div class="hero-inner">
+    <h1>eyvoyage</h1>
+    <p class="tagline">Travel notes and planning</p>
+  </div>
+</div>
 
     <!-- CARD SECTION -->
 <div class="cards">
